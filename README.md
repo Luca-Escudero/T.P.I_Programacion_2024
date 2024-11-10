@@ -4,9 +4,9 @@ Año: 2024
 
 Integrantes:
 
-Luca Escudero
-Simon Guevara
-Ignacio Perez
+Luca Escudero,
+,Simon Guevara
+,Ignacio Perez
 
 Descripción:
 Juegos desarrollados:
