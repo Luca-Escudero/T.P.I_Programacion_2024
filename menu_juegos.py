@@ -26,7 +26,7 @@ def seleccionar_juego():
             print("\n🟢 Iniciando Carrera de Palabras...\n" + "=" * 30)
             jugar_carrera_palabras()
         elif opcion == "3":
-            print("\n🟢 Iniciando Adivina la Capital...\n" + "=" * 30)
+            print("\n🟢 Iniciando Geo Capital...\n" + "=" * 30)
             jugar_geo_capital()
         elif opcion == "0":
             print("\n👋 ¡Gracias por jugar! Hasta luego.\n" + "=" * 30)
