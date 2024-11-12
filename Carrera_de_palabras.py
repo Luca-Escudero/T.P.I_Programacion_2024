@@ -1,5 +1,6 @@
 def jugar_carrera_palabras():
-    letras_disponibles = ['r', 't','b', 'a', 'j', 'o', '']
+    import time
+    letras_disponibles = ['r', 't','b', 'a', 'j', 'o', 'a']
 
     palabras_disponibles = ["raja", "raba", "rabo", "rajo",
                             "rata", "rato", "roja", "roba","atajo",
@@ -9,13 +10,13 @@ def jugar_carrera_palabras():
                             "barajo", "boa", "bota", "baja", "bata", "bato","otra",
                             "jota", "jara"]#diccionaio de palabras correctas
 
-    def palabra_valida(palabra_ingresada,palabras_disponibles):
-        return palabra_ingresada in palabras_disponibles
 
-    copia_palabras_disponibles = palabras_disponibles.copy()#creamos una copia del diciconario para poder modificarlo
+
     def juego ():
+        copia_palabras_disponibles = palabras_disponibles.copy()#creamos una copia del diciconario para poder modificarlo
         palabras_correctas = 0
         palabras_acertadas = []
+        inicio = time.time()
         print('¡Bienvenido/a a la carrera de palabras!\n')
         print (f"Intente formar la mayor cantidad de palabras con las siguientes letras {'-' .join(letras_disponibles)}")
         while True:
@@ -40,9 +41,12 @@ def jugar_carrera_palabras():
             else:
                 print('\nPalabra incorrecta')
                 print (f"\nLetras disponibles   {','.join(letras_disponibles)}")
+        fin =time.time()
+        tiempo_total = round(fin-inicio,2)
         print ("_"*144)#multiplico el ("_")
         print(f'\nUsted acertó', palabras_correctas,'/', len(palabras_disponibles) )
         print (f"Sus palabras acertadas fueron las siguientes:",' - '.join(palabras_acertadas))
+        print (f"tiempo total: {tiempo_total} segundos")
         print ("_"*144)
 
     def jugar_nuevamente():#funcion para preguntar al usuario si desea jugar nuevamente o no.
