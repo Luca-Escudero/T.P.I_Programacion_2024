@@ -1,5 +1,5 @@
 def jugar_carrera_palabras():
-    letras_disponibles = ['t', 'r','a', 'b', 'a', 'j', 'o']
+    letras_disponibles = ['r', 't','b', 'a', 'j', 'o', '']
 
     palabras_disponibles = ["raja", "raba", "rabo", "rajo",
                             "rata", "rato", "roja", "roba","atajo",
@@ -7,52 +7,54 @@ def jugar_carrera_palabras():
                             "ata", "ato", "aro", "ara","trabajo", "traba","tora","tara"
                             "tajo", "trajo", "trabo", "toba","bajo", "barato", "bar", "bajar",
                             "barajo", "boa", "bota", "baja", "bata", "bato","otra",
-                            "jota", "jara"]
+                            "jota", "jara"]#diccionaio de palabras correctas
 
     def palabra_valida(palabra_ingresada,palabras_disponibles):
         return palabra_ingresada in palabras_disponibles
 
-    copia_palabras_disponibles = palabras_disponibles.copy()
+    copia_palabras_disponibles = palabras_disponibles.copy()#creamos una copia del diciconario para poder modificarlo
     def juego ():
         palabras_correctas = 0
         palabras_acertadas = []
-        print('¡bienvenido/a a la carrera de palabras!')
-        print (f"letras disponibles para formar la mayor cantidad de palabras posibles {',' .join(letras_disponibles)}")
+        print('¡Bienvenido/a a la carrera de palabras!\n')
+        print (f"Intente formar la mayor cantidad de palabras con las siguientes letras {'-' .join(letras_disponibles)}")
         while True:
-            palabra_ingresada = input('ingrese una palabra o salir para finalizar el juego: ').lower()
-            #si ingresa salir finaliza el juego
-            if palabra_ingresada == "salir":
+            palabra_ingresada = input('\nIngrese una palabra o salir para finalizar el juego: ').lower()
+            
+            if palabra_ingresada == "salir":#si ingresa salir finaliza el juego
                 break
-            elif palabra_ingresada in palabras_acertadas:
-                print ('palabra repetida')
-                print (f"letras disponibles   {','.join(letras_disponibles)}")
-            #para verificar si la palabra ingresada es valida o invalida
-            elif palabra_ingresada in copia_palabras_disponibles:
+            elif palabra_ingresada in palabras_acertadas:#para verificar si la palabra ingresada es valida o invalida
+                print ('\nPalabra repetida')
+                print (f"Letras disponibles   {'-'.join(letras_disponibles)}")
+            
+            elif palabra_ingresada in copia_palabras_disponibles:#si ingresa una palabra correcta agregar a lista palabras acertadas.
                 palabras_correctas += 1 
-                print ('palabra correcta',palabras_correctas)
-                print (f"letras disponibles   {','.join(letras_disponibles)}")
+                print ('\nPalabra correcta',palabras_correctas)
+                print (f"Letras disponibles   {'-'.join(letras_disponibles)}")
                 
-                #si la palabra que se ingresa es correcta agregar a la lista de palabras acertadas
                 palabras_acertadas.append(palabra_ingresada)
-                # si la palabra ingresada es correcta, para que no se pueda repetir y la tome como valida, la removemos de la copia_palabras_disponibles.
                 copia_palabras_disponibles.remove(palabra_ingresada)
+                # si la palabra ingresada es correcta, para que no se pueda repetir y la tome como valida,
+                # la removemos de la copia_palabras_disponibles.
 
             else:
-                print('palabra incorrecta')
-                print (f"letras disponibles   {','.join(letras_disponibles)}")
-        print(f'usted acertó', palabras_correctas,'/', len(palabras_disponibles) )
-        print (f"sus palabras acertadas fueron las siguientes:",','.join(palabras_acertadas))
+                print('\nPalabra incorrecta')
+                print (f"\nLetras disponibles   {','.join(letras_disponibles)}")
+        print ("_"*144)#multiplico el ("_")
+        print(f'\nUsted acertó', palabras_correctas,'/', len(palabras_disponibles) )
+        print (f"Sus palabras acertadas fueron las siguientes:",' - '.join(palabras_acertadas))
+        print ("_"*144)
 
-    def jugar_nuevamente():#funcion que pregunta al ususario si desea jugar 
+    def jugar_nuevamente():#funcion para preguntar al usuario si desea jugar nuevamente o no.
         while True:
-            jugar_de_nuevo = input('¿Desea jugar nuevamente? si/no: ').lower()
+            jugar_de_nuevo = input('\n¿Desea jugar nuevamente? si/no: ').lower()
             if jugar_de_nuevo == 'si':
                 juego()
             elif jugar_de_nuevo == 'no':
-                print("Gracias por jugar. ¡Hasta la próxima!")
+                print("\nGracias por jugar. ¡Hasta la próxima!\n")
                 break
             else:
-                print("Por favor, responde con 'si' o 'no'.")
-                
-    juego()#para ejecutar el juego
-    jugar_nuevamente()#para volver a ejecutar el juego
+                print("\nPor favor, responde con SI o NO.")
+
+    juego()#para ejecutar eljuego
+    jugar_nuevamente()#para ejecutar nuevamente el juego
