@@ -58,5 +58,4 @@ def jugar_geo_capital():
     if jugar_de_nuevo == "si":
         jugar_geo_capital()  # Si el usuario quiere jugar de nuevo, se llama a la función jugar
     else:
-        print("----- ¡Gracias por jugar! ¡Adiós! -----")
-
+        print("----- ¡Gracias por jugar! ¡Adiós! ----- \n")
