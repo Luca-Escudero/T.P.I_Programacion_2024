@@ -5,7 +5,7 @@ from geo_capital import jugar_geo_capital
 
 def mostrar_menu():
     print("\n" + "=" * 30)
-    print("🎉 ¡Bienvenidos! 🎉")
+    print("  🎉 ¡Bienvenidos! 🎉")
     print("=" * 30)
     print("Selecciona tu juego:")
     print("1️⃣  Palabras Encadenadas")
@@ -17,7 +17,7 @@ def mostrar_menu():
 def seleccionar_juego():
     while True:
         mostrar_menu()
-        opcion = input("\nIngresa el número de tu elección (0-3): ")
+        opcion = input("Ingresa el número de tu elección (0-3): ")
         
         if opcion == "1":
             print("\n🟢 Iniciando Palabras Encadenadas...\n" + "=" * 30)
@@ -34,6 +34,5 @@ def seleccionar_juego():
         else:
             print("🚫 Opción no válida. Intente nuevamente.\n" + "=" * 30)
 
-# Ejecuta el menú principal solo si el archivo es ejecutado directamente
 if __name__ == "__main__":
     seleccionar_juego()
